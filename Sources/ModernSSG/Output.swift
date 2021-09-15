@@ -1,19 +1,19 @@
 //
-//  input.swift
+//  Output.swift
 //  
 //
-//  Created by Japneet Kalra on 2021-09-14.
+//  Created by Japneet Kalra on 2021-09-15.
 //
 
 import Foundation
 import ArgumentParser
 
 extension Command {
-  struct input: ParsableCommand {
+  struct Output: ParsableCommand {
     static var configuration: CommandConfiguration {
           .init(
-            commandName: "input",
-            abstract: "allow the user to specify an input file or folder to be processed"
+            commandName: "output",
+            abstract: "allow the user to specify an output file or folder to be processed"
           )
         }
     @Argument(help: "convert this text file to html")
@@ -34,7 +34,7 @@ extension Command {
             catch {print("Error in reading data")}
             //Writing the data
             let storedText =  "<!doctype html><html><head><meta charset='utf-8'><title>" + pathPrefix + "</title><meta name='viewport' content='width=device-width', initial-scale=1'></head><body><h1>" + pathPrefix + "</h1>" + result + "</body></html>";
-            let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/Dist/" + pathPrefix + ".HTML"
+            let filePath = self.filename
             if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
             {
                 print("File Created")
