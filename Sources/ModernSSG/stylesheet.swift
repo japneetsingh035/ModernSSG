@@ -51,7 +51,6 @@ extension Command {
         let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/Dist" + "/" + fileName + ".HTML"
         if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
             {
-                print("File Created")
                 try storedText.write(toFile: filePath, atomically: false, encoding: .utf8)
             }
         else{
