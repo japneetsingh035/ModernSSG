@@ -46,7 +46,9 @@ Please make sure to update tests as appropriate.
 
 ## Sources
 [Build a Command Line Tool Using Swift Argument Parser by Riccardo](https://betterprogramming.pub/build-a-command-line-tool-using-swift-argument-parser-f7d9443b785)
+
 [FILEMANAGER](https://developer.apple.com/documentation/foundation/filemanager/)
+
 [ARGUMENT PARSER](https://github.com/apple/swift-argument-parser)
 
 ## Author
