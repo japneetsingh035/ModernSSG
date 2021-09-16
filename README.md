@@ -49,9 +49,6 @@ This commands allows the user to specify the input file present in desktop direc
 
 ```swift
 swift run ModernSSG input "your text file"
-File URL to read file from "your text file URL"
-File data copied
-File Created at "your html file URL"
 ```
 ## Example
 
