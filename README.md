@@ -3,6 +3,7 @@
 
 ## Pre-requisites
 Swift is an ios based development language. This requires Swift installed on your mac or windows. To work on this project xcode installation is required.
+[Install Swift](https://swift.org/getting-started/#installing-swift)
 
 ## Terminal Usage
 ```bash
