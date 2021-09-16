@@ -10,7 +10,10 @@ extension Command {
         abstract: "A program to convert text files to HTML site generator",
         version: "0.0.1",
         subcommands: [
-            Command.input.self
+            Command.input.self,
+            Command.i_input.self,
+            Command.Output.self,
+            Command.stylesheet.self
         ]
       )
     }

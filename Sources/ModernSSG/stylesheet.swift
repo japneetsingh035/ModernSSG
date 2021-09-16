@@ -1,23 +1,27 @@
 //
-//  Output.swift
+//  stylesheet.swift
 //  
 //
 //  Created by Japneet Kalra on 2021-09-15.
 //
+
 import Foundation
 import ArgumentParser
 
 extension Command {
-  struct Output: ParsableCommand {
+  struct stylesheet: ParsableCommand {
     static var configuration: CommandConfiguration {
           .init(
-            commandName: "output",
-            abstract: "allow the user to specify an output folder to be processed"
+            commandName: "stylesheet",
+            abstract: "allow the user to optionally specify a --stylesheet or -s URL to a CSS stylesheet "
           )
         }
-    @Argument(help: "all html files moved to destination folder")
-    var folder_name: String
-    var result = "";
+    //allows the user to argument for URL Stylesheet
+    @Argument(help: "enter the stylesheet URL to be added in body tags.")
+    var URL_Link: String
+    
+    var result = ""
+    
     mutating func run() throws {
         let url = URL(fileURLWithPath: NSHomeDirectory() + "/Desktop/ModernSSG/Sherlock-Holmes-Selected-Stories/")
         var files = [URL]()
@@ -43,8 +47,8 @@ extension Command {
         catch {
             print("Error in reading data")
         }
-        let storedText =  "<!doctype html><html><head><meta charset='utf-8'><title>" + fileName + "</title><meta name='viewport' content='width=device-width', initial-scale=1'></head><body><h1>" + fileName + "</h1>" + result + "</body></html>";
-        let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/" + self.folder_name + "/" + fileName + ".HTML"
+            let storedText =  "<!doctype html><html><head><LINK rel='stylesheet' href=" + self.URL_Link + "><meta charset='utf-8'><title>" + fileName + "</title><meta name='viewport' content='width=device-width', initial-scale=1'></head><body><h1>" + fileName + "</h1>" + result + "</body></html>";
+        let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/Dist" + "/" + fileName + ".HTML"
         if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
             {
                 print("File Created")
