@@ -2,7 +2,10 @@
  Modern SSG is a Static Site Generator which helps to convert text files to HTML using Swift with Argument Parser.
 
 ## Pre-requisites
+Swift is an ios based development language. THis requires XCode Installed.
+
 ```bash
+$ mv ModernSSG Desktop/ModernSSG
 $ swift package init --type executable
 ```
 
