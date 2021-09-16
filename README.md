@@ -49,4 +49,4 @@ Please make sure to update tests as appropriate.
 [https://github.com/apple/swift-argument-parser]
 
 ## Author
-[Japneet Singh] (https://github.com/japneetsingh035)
+[JAPNEET SINGH](https://github.com/japneetsingh035)
