@@ -42,7 +42,7 @@ This command allows the version to specify the current version of the tool.
 
 ```swift
 swift run ModernSSG --version
-0.0.1
+ModernSSG 0.0.1
 ```
 
 ## Input
