@@ -36,12 +36,19 @@ SUBCOMMANDS:
 Program ended with exit code: 0
 ```
 
+##Version
+This command allows the version to specify the current version of the tool.
+
+```swift
+swift run ModernSSG --version
+0.0.1
+```
+
 ## Input
 This commands allows the user to specify the input file present in desktop directory for the command line tool to read and look for same file. Please mention the file extension to avoid reading error.
 
 ```swift
 swift run ModernSSG input "your text file"
-[0/0] Build complete!
 File URL to read file from "your text file URL"
 File data copied
 File Created at "your html file URL"
@@ -52,7 +59,6 @@ This commands allows the user to specify the output folder present in current di
 
 ```swift
 swift run ModernSSG output "your output folder name"
-[4/4] Build complete!
 [Your File Names]
 ```
 
@@ -61,7 +67,6 @@ This commands allows the user to specify the input folder/directory present in c
 
 ```swift
 swift run ModernSSG i "your input folder directory" 
-[3/3] Build complete!
 [Your File Names]
 ```
 ## Stylesheet
@@ -69,7 +74,6 @@ This command allow the user to specify a stylesheet URL to be processed on all f
 
 ```swift
 swift run ModernSSG stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-[3/3] Build complete!
 [Your File Names]
 ```
 
