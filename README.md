@@ -36,7 +36,7 @@ SUBCOMMANDS:
 Program ended with exit code: 0
 ```
 
-##Version
+## Version
 This command allows the version to specify the current version of the tool.
 
 ```swift
