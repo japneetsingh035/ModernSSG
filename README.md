@@ -53,6 +53,33 @@ File URL to read file from "your text file URL"
 File data copied
 File Created at "your html file URL"
 ```
+## Example
+
+Before: "your filename.txt"
+
+```
+My first SSG Generator file
+This is my first paragraph
+This is my second paragraph
+```
+
+After: "your filename.html"
+```
+<!doctype html>
+<html>
+<head>
+<LINK rel='stylesheet' href="URL">
+<meta charset='utf-8'>
+<title>"Your filename"</title>
+<meta name='viewport' content='width=device-width', initial-scale=1'>
+</head>
+<body>
+<h1>This is my first SSG Generator file</h1>
+<p>This is my first paragraph</p>
+<p>This is my second paragraph</p>
+</body>
+</html>"
+```
 
 ## Output
 This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
@@ -76,6 +103,7 @@ This command allow the user to specify a stylesheet URL to be processed on all f
 swift run ModernSSG stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
 [Your File Names]
 ```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
