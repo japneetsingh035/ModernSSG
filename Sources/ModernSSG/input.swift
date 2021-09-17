@@ -34,7 +34,7 @@ extension Command {
                 result = try String(contentsOf: fileURL, encoding: .utf8)
                 result = result.replacingOccurrences(of: "\n\n\n", with: "<p>", options: .regularExpression)
                 result = result.replacingOccurrences(of: "\n\n", with: "</p><p>", options: .regularExpression)
-                result = result.replacingOccurrences(of: pathPrefix, with: "")
+                result = result.replacingOccurrences(of: pathPrefix, with: "", options: .regularExpression)
                 print("File data copied")
             }
             catch {print("Error in reading file. Please store text in desktop directory")}
