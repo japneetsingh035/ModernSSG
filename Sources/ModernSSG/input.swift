@@ -29,7 +29,6 @@ extension Command {
             print("File URL to read \(fileURL)")
             
             //Reading the data
-            
             do {
                 result = try String(contentsOf: fileURL, encoding: .utf8)
                 result = result.replacingOccurrences(of: "\n\n\n", with: "<p>", options: .regularExpression)
@@ -40,9 +39,8 @@ extension Command {
             catch {print("Error in reading file. Please store text in desktop directory")}
             
             //Writing the data
-            
             let storedText =  "<!doctype html><html><head><meta charset='utf-8'><title>\(pathPrefix)</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>\(pathPrefix)</h1>\(result)</body></html>";
-            let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/Dist/" + pathPrefix + ".html"
+            let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/Dist/\(pathPrefix).html"
             
             if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
             {
