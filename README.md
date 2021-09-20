@@ -83,7 +83,7 @@ After: "your filename.html"
 This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
 
 ```swift
-swift run ModernSSG output "your output folder name"
+swift run ModernSSG input "your text file" --output "your output folder name"
 [Your File Names]
 ```
 
@@ -98,7 +98,7 @@ swift run ModernSSG i "your input folder directory"
 This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
 
 ```swift
-swift run ModernSSG stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+swift run ModernSSG input "your text file" --stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
 [Your File Names]
 ```
 
