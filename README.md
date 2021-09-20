@@ -27,11 +27,11 @@ OPTIONS:
 SUBCOMMANDS:
   input                 allow the user to specify an input file to be processed
   
-  i                     allow the user to specify an input directory to be processed on all files
+  i                     allow the user to specify an input directory to be processed
   
-  output                allow the user to specify an output folder to be processed on all files
+  --output              allow the user to specify an --output or -o folder to be processed
   
-  stylesheet            allow the user to specify a stylesheet URL to be processed on all files
+  --stylesheet          allow the user to optionally specify a --stylesheet or -s URL to a CSS stylesheet
 
   See 'ModernSSG help <subcommand>' for detailed help.
 Program ended with exit code: 0
