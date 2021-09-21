@@ -44,7 +44,7 @@ ModernSSG 0.0.1
 This commands allows the user to specify the input file present in desktop directory for the command line tool to read and look for same file. Please mention the file extension to avoid reading error.
 
 ```swift
-swift run ModernSSG input "your text file"
+swift run ModernSSG --input "your text file"
 ```
 ## Example
 
@@ -78,7 +78,7 @@ After: "your filename.html"
 This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
 
 ```swift
-swift run ModernSSG input "your text file" --output "your output folder name"
+swift run ModernSSG --input "your text file" --output "your output folder name"
 [Your File Names]
 ```
 
@@ -86,14 +86,14 @@ swift run ModernSSG input "your text file" --output "your output folder name"
 This commands allows the user to specify the input folder/directory present in current directory for the command line tool to read and look for all files. 
 
 ```swift
-swift run ModernSSG i "your input folder directory" 
+swift run ModernSSG -i "your input folder directory" 
 [Your File Names]
 ```
 ## Stylesheet
 This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
 
 ```swift
-swift run ModernSSG input "your text file" --stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+swift run ModernSSG --input "your text file" --stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
 [Your File Names]
 ```
 
