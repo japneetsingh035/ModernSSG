@@ -12,10 +12,14 @@ extension Command {
                 version: "Modern SSG 0.0.1"
             )
         }
+        
+        //input
         @Option(name: .shortAndLong ,help:"allow the user to specify an input file or folder to be processed") var input: String
         
+        //stylesheet
         @Option(name: .shortAndLong, help: "allow the user to optionally specify a URL to a CSS stylesheet.") var stylesheet: String?
         
+        //output
         @Option(name: .shortAndLong, help: "allow the user to specify an output folder to be processed.") var output: String?
         
         var result = ""
