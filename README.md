@@ -18,23 +18,18 @@ $ swift run ModernSSG [subcommands]
 ```bash
 OVERVIEW: A program to convert text files to HTML site generator
 
-USAGE: ModernSSG <subcommand>
+USAGE: ModernSSG --input <input> [--stylesheet <stylesheet>] [--output <output>]
 
 OPTIONS:
+  -i, --input <input>     allow the user to specify an input file or folder to
+                          be processed
+  -s, --stylesheet <stylesheet>
+                          allow the user to optionally specify a URL to a CSS
+                          stylesheet.
+  -o, --output <output>   allow the user to specify an output folder to be
+                          processed.
   --version               Show the version.
   -h, --help              Show help information.
-
-SUBCOMMANDS:
-  input                 allow the user to specify an input file to be processed
-  
-  i                     allow the user to specify an input directory to be processed
-  
-  --output              allow the user to specify an --output or -o folder to be processed
-  
-  --stylesheet          allow the user to optionally specify a --stylesheet or -s URL to a CSS stylesheet
-
-  See 'ModernSSG help <subcommand>' for detailed help.
-Program ended with exit code: 0
 ```
 
 ## Version
