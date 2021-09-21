@@ -23,7 +23,7 @@ extension Command {
         mutating func run() throws{
             //Searching the file in desktop directory
             if (self.input.hasSuffix(".txt")){
-                let fileURL = URL(fileURLWithPath: NSHomeDirectory() + "/Desktop/ModernSSG/" + self.input)
+                let fileURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath + "/" + self.input)
                 let fName: NSString = self.input as NSString
                 let pathPrefix = fName.deletingPathExtension
                 print("File URL to read \(fileURL)")
@@ -42,7 +42,7 @@ extension Command {
                     let storedText =  "<!doctype html><html><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(pathPrefix)</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>\(pathPrefix)</h1>\(result)</body></html>";
                     
                     if (self.output != nil) {
-                        let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/\(self.output ?? "" )/\(pathPrefix).html"
+                        let filePath = FileManager.default.currentDirectoryPath + "/ \(self.output ?? "" )/\(pathPrefix).html"
                         if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
                         {
                             try storedText.write(toFile: filePath, atomically: false, encoding: .utf8)
@@ -53,7 +53,7 @@ extension Command {
                         }
                     }
                     else{
-                        let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/Dist/\(pathPrefix).html"
+                        let filePath = FileManager.default.currentDirectoryPath + "/Dist/\(pathPrefix).html"
                         if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
                         {
                             try storedText.write(toFile: filePath, atomically: false, encoding: .utf8)
@@ -67,7 +67,7 @@ extension Command {
                 catch {print("Error in reading file. Please check name and extension of file.                                           *** File must be in current directory ***")}
             }
             else{
-                let url = URL(fileURLWithPath: NSHomeDirectory() + "/Desktop/ModernSSG/\(self.input)/")
+                let url = URL(fileURLWithPath: FileManager.default.currentDirectoryPath + "/\(self.input)/")
                 var files = [URL]()
                 //Searching all text files in desktop directory
                 if let enumerator = FileManager.default.enumerator(at: url, includingPropertiesForKeys: [.isRegularFileKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) {                for case let fileURL as URL in enumerator {
@@ -99,7 +99,7 @@ extension Command {
                             //!!!!!!!!!!!!!!!!
                             let storedText =  "<!doctype html><html><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(fileName)</title><meta name='viewport' content='width=device-width,initial-scale=1'></head><body><h1>\(fileName)</h1>\(new_result)</body></html>";
                             if (self.output != nil) {
-                                let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/\(self.output ?? " ")/\(fileName).html"
+                                let filePath = FileManager.default.currentDirectoryPath + "/\(self.output ?? " ")/\(fileName).html"
                                 if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
                                 {
                                     try storedText.write(toFile: filePath, atomically: false, encoding: .utf8)
@@ -110,7 +110,7 @@ extension Command {
                                 }
                             }
                             else{
-                                let filePath = NSHomeDirectory() + "/Desktop/ModernSSG/Dist/\(fileName).html"
+                                let filePath = FileManager.default.currentDirectoryPath + "/Dist/\(fileName).html"
                                 if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
                                 {
                                     try storedText.write(toFile: filePath, atomically: false, encoding: .utf8)
