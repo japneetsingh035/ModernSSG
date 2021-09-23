@@ -79,7 +79,6 @@ This commands allows the user to specify the output folder present in current di
 
 ```swift
 swift run ModernSSG --input "your text file" --output "your output folder name"
-[Your File Names]
 ```
 
 ## i
@@ -87,14 +86,12 @@ This commands allows the user to specify the input folder/directory present in c
 
 ```swift
 swift run ModernSSG -i "your input folder directory" 
-[Your File Names]
 ```
 ## Stylesheet
 This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
 
 ```swift
 swift run ModernSSG --input "your text file" --stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-[Your File Names]
 ```
 
 
