@@ -42,8 +42,8 @@ extension Command {
                       result = result.replacingOccurrences(of: "\r?\n\r?\n", with: "</p><p>", options: .regularExpression)
                       //MD support - italics
                     } else if(self.input.hasSuffix(".md")){
-                        result = result.replacingOccurrences(of: " ", with: "<i>", options: .regularExpression)
-                        result = result.replacingOccurrences(of: " ", with: "</i>", options: .regularExpression)
+                        result = result.replacingOccurrences(of: " _", with: "<i>", options: .regularExpression)
+                        result = result.replacingOccurrences(of: "_ ", with: "</i>", options: .regularExpression)
                     }
                     result = result.replacingOccurrences(of: pathPrefix, with: " ", options: .regularExpression)
                     print("File data copied")
