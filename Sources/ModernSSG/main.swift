@@ -26,7 +26,7 @@ extension Command {
         var new_result = "";
         mutating func run() throws{
             //Searching the file in desktop directory
-            if (self.input.hasSuffix(".txt")){
+            if (self.input.hasSuffix(".txt")||self.input.hasSuffix(".md")){
                 let fileURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath + "/" + self.input)
                 let fName: NSString = self.input as NSString
                 let pathPrefix = fName.deletingPathExtension
@@ -36,11 +36,18 @@ extension Command {
                     //Reading the data
                     //!!!!!!!!!!!!!!!!
                     result = try String(contentsOf: fileURL, encoding: .utf8)
-                    result = result.replacingOccurrences(of: "\r?\n\r?\n\r?\n", with: "<p>", options: .regularExpression)
-                    result = result.replacingOccurrences(of: "\r?\n\r?\n", with: "</p><p>", options: .regularExpression)
+
+                    if(self.input.hasSuffix(".txt")) {
+                      result = result.replacingOccurrences(of: "\r?\n\r?\n\r?\n", with: "<p>", options: .regularExpression)
+                      result = result.replacingOccurrences(of: "\r?\n\r?\n", with: "</p><p>", options: .regularExpression)
+                      //MD support - italics
+                    } else {
+                      result = result.replacingOccurrences(of: "_?\n\r?", with: "</p>", options: .regularExpression)
+                      result = result.replacingOccurrences(of: "\n?\r?_", with: "<p>", options: .regularExpression)
+                    }
                     result = result.replacingOccurrences(of: pathPrefix, with: " ", options: .regularExpression)
                     print("File data copied")
-                    
+
                     //Writing the data
                     //!!!!!!!!!!!!!!!!
                     let storedText =  "<!doctype html><html><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(pathPrefix)</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>\(pathPrefix)</h1>\(result)</body></html>";
@@ -70,6 +77,8 @@ extension Command {
                 }
                 catch {print("Error in reading file. Please check name and extension of file.                                           *** File must be in current directory ***")}
             }
+
+
             else{
                 let url = URL(fileURLWithPath: FileManager.default.currentDirectoryPath + "/\(self.input)/")
                 var files = [URL]()
