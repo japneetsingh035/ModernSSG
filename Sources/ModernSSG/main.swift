@@ -22,6 +22,9 @@ extension Command {
         //output
         @Option(name: .shortAndLong, help: "allow the user to specify an output folder to be processed.") var output: String?
         
+        //lang
+        @Option(name: .shortAndLong, help:"allow the user to specify the language attribute on root html.") var lang: String?
+        
         var result = ""
         var new_result = "";
         mutating func run() throws{
@@ -44,13 +47,17 @@ extension Command {
                     } else if(self.input.hasSuffix(".md")){
                         result = result.replacingOccurrences(of: " _", with: "<i>", options: .regularExpression)
                         result = result.replacingOccurrences(of: "_ ", with: "</i>", options: .regularExpression)
+                        result = result.replacingOccurrences(of: "\r?\n`", with: "<code>", options: .regularExpression)
+                        result = result.replacingOccurrences(of: "`\r?\n", with: "</code>", options: .regularExpression)
+                        result = result.replacingOccurrences(of: "---", with: "<hr>", options: .regularExpression)
                     }
                     result = result.replacingOccurrences(of: pathPrefix, with: " ", options: .regularExpression)
                     print("File data copied")
 
                     //Writing the data
                     //!!!!!!!!!!!!!!!!
-                    let storedText =  "<!doctype html><html><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(pathPrefix)</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>\(pathPrefix)</h1>\(result)</body></html>";
+                    let storedText =
+                    "<!doctype html><html lang = \(self.lang ?? "en-CA")><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(pathPrefix)</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>\(pathPrefix)</h1>\(result)</body></html>";
                     
                     if (self.output != nil) {
                         let filePath = FileManager.default.currentDirectoryPath + "/ \(self.output ?? "" )/\(pathPrefix).html"
@@ -71,7 +78,7 @@ extension Command {
                             print("File Created at \(filePath)")
                         }
                         else{
-                            print("Error in writing data");
+                            print("Error in writing data! Please create dist folder if missing.");
                         }
                     }
                 }
@@ -110,7 +117,7 @@ extension Command {
                             
                             //Writing the data
                             //!!!!!!!!!!!!!!!!
-                            let storedText =  "<!doctype html><html><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(fileName)</title><meta name='viewport' content='width=device-width,initial-scale=1'></head><body><h1>\(fileName)</h1>\(new_result)</body></html>";
+                            let storedText =  "<!doctype html><html lang =\(self.lang ?? "en-CA")><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(fileName)</title><meta name='viewport' content='width=device-width,initial-scale=1'></head><body><h1>\(fileName)</h1>\(new_result)</body></html>";
                             if (self.output != nil) {
                                 let filePath = FileManager.default.currentDirectoryPath + "/\(self.output ?? " ")/\(fileName).html"
                                 if (FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil))
