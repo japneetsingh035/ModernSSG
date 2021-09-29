@@ -47,6 +47,11 @@ extension Command {
                     } else if(self.input.hasSuffix(".md")){
                         result = result.replacingOccurrences(of: " _", with: "<i>", options: .regularExpression)
                         result = result.replacingOccurrences(of: "_ ", with: "</i>", options: .regularExpression)
+                        //Add support for inline <code> blocks //19
+                        result = result.replacingOccurrences(of: "\r?\n`", with: "<code>", options: .regularExpression)
+                        result = result.replacingOccurrences(of: "`\r?\n", with: "</code>", options: .regularExpression)
+                        //Add support for a horizontal rule in Markdown
+                        result = result.replacingOccurrences(of: "---", with: "<hr>", options: .regularExpression)
                     }
                     result = result.replacingOccurrences(of: pathPrefix, with: " ", options: .regularExpression)
                     print("File data copied")
