@@ -22,6 +22,9 @@ extension Command {
         //output
         @Option(name: .shortAndLong, help: "allow the user to specify an output folder to be processed.") var output: String?
         
+        //lang
+        @Option(name: .shortAndLong, help:"allow the user to specify the language attribute on root html.") var lang: String?
+        
         var result = ""
         var new_result = "";
         mutating func run() throws{
@@ -61,7 +64,7 @@ extension Command {
                             print("File Created at \(filePath)")
                         }
                         else{
-                            print("Error in writing data");
+                            print("Error in writing data! Please create folder in current directory");
                         }
                     }
                     else{
@@ -73,6 +76,7 @@ extension Command {
                         }
                         else{
                             print("Error in writing data! Please create dist folder if missing.");
+                            print("Error in writing data! Please create folder in current directory");
                         }
                     }
                 }
@@ -120,7 +124,7 @@ extension Command {
                                     print("File Created at \(filePath)")
                                 }
                                 else{
-                                    print("Error in writing data");
+                                    print("Error in writing data! Please create folder in current directory");
                                 }
                             }
                             else{
@@ -131,7 +135,7 @@ extension Command {
                                     print("File Created at \(filePath)")
                                 }
                                 else{
-                                    print("Error in writing data");
+                                    print("Error in writing data! Please create folder in current directory");
                                 }
                             }
                         }
