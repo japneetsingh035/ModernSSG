@@ -8,8 +8,6 @@ Swift is an ios based development language. This requires Swift installed on you
 ## Terminal Usage
 ```bash
 $ mv ModernSSG Desktop/ModernSSG
-$ swift package init --type executable
-$ swift build
 $ swift run
 $ swift run ModernSSG [subcommands]
 ```
