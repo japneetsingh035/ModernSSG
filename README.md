@@ -28,6 +28,7 @@ OPTIONS:
                           processed.
   --version               Show the version.
   -h, --help              Show help information.
+  -c, --config            We can add directory from .json
 ```
 
 ## Version
@@ -43,6 +44,7 @@ This commands allows the user to specify the input file present in desktop direc
 
 ```swift
 swift run ModernSSG --input "your text file"
+swift run ModernSSG --config modernSsgConfing.json
 ```
 ## Example
 
