@@ -120,7 +120,7 @@ extension Command {
                             }
                         }catch { print(error, fileURL) }
                     }
-                    }
+                }
                     //
                     for i in 0..<files.count {
                         let fileName = files[i].deletingPathExtension().lastPathComponent
@@ -164,7 +164,8 @@ extension Command {
                         }
                     }
                 }
-            }else{
+            }
+            else{
                 if (self.input!.hasSuffix(".txt")||self.input!.hasSuffix(".md")){
                     let fileURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath + "/" + self.input!)
                     let fName: NSString = self.input! as NSString
