@@ -1,9 +1,0 @@
----
-title: Welcome to My Static Site
-author: JavaScript Joel
-date: Aug 15, 2020
----
-
-👋 Welcome fellow Tailwind CSS and miminal monochrome blog fan. This starter template provides a starting point to create your own minimal monochrome blog using Tailwind CSS and vanilla Javascript.
-
-OKASKSDLSADFKDSFPKFSDPLFSDFKJ
