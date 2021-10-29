@@ -56,16 +56,24 @@ extension Command {
 
                 //conversion of MD to html
                 } else if(self.input.hasSuffix(".md")){
+                    
+                    //Improved Accessibility of generated HTML
+                    data = data.replacingOccurrences(of: "](", with: "<a href='", options: .regularExpression)
+                    data = data.replacingOccurrences(of: ")", with: "'>Click the Link</a>", options: .regularExpression)
                      data = data.replacingOccurrences(of: "### ", with: "<h3>", options: .regularExpression)
                      data = data.replacingOccurrences(of: " ###", with: "</h3>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "## ", with: "<h2>", options: .regularExpression)
                     data = data.replacingOccurrences(of: " ##", with: "</h2>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "# ", with: "<h1>", options: .regularExpression)
                     data = data.replacingOccurrences(of: " #", with: "</h1>", options: .regularExpression)
-                    data = data.replacingOccurrences(of: "```bash", with: "<pre><code>", options: .regularExpression)
-                    data = data.replacingOccurrences(of: "```", with: "</code></pre>", options: .regularExpression)
                     data = data.replacingOccurrences(of: " _", with: "<i>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "_ ", with: "</i>", options: .regularExpression)
+                    
+                    //Full Markdown support
+                    data = data.replacingOccurrences(of: "^*[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$", with: "<i>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "^[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$*", with: "</i>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "^**[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$", with: "<b>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "^[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$**", with: "</b>", options: .regularExpression)
                     //Add support for a horizontal rule in Markdown
                     data = data.replacingOccurrences(of: "---", with: "<hr>", options: .regularExpression)
                 }
