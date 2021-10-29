@@ -8,7 +8,7 @@ extension Command {
         static var configuration: CommandConfiguration {
             .init(
                 commandName: "ModernSSG",
-                abstract: "A program to convert text files to HTML site generator",
+                abstract: "A program to convert text or md files to HTML site generator",
                 version: "ModernSSG 0.0.1"
             )
         }
@@ -24,6 +24,9 @@ extension Command {
         
         //lang
         @Option(name: .shortAndLong, help:"allow the user to specify the language attribute on root html.") var lang: String?
+        
+        //lang
+        @Option(name: .long, help:"allow the user to specify the image attribute on root html.") var image: String?
         
         mutating func run() throws{
             
@@ -53,20 +56,23 @@ extension Command {
 
                 //conversion of MD to html
                 } else if(self.input.hasSuffix(".md")){
+                     data = data.replacingOccurrences(of: "### ", with: "<h3>", options: .regularExpression)
+                     data = data.replacingOccurrences(of: " ###", with: "</h3>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "## ", with: "<h2>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: " ##", with: "</h2>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "# ", with: "<h1>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: " #", with: "</h1>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "```bash", with: "<pre><code>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "```", with: "</code></pre>", options: .regularExpression)
                     data = data.replacingOccurrences(of: " _", with: "<i>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "_ ", with: "</i>", options: .regularExpression)
-                    
-                    //Add support for inline <code> blocks //19
-                    data = data.replacingOccurrences(of: "\r?\n`", with: "<code>", options: .regularExpression)
-                    data = data.replacingOccurrences(of: "`\r?\n", with: "</code>", options: .regularExpression)
-                    
                     //Add support for a horizontal rule in Markdown
                     data = data.replacingOccurrences(of: "---", with: "<hr>", options: .regularExpression)
                 }
                 //Writing the data
                 //!!!!!!!!!!!!!!!!
                 let storedText =
-                    "<!doctype html><html lang = \(self.lang ?? "en-CA")><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(pathPrefix)</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>\(pathPrefix)</h1>\(data)</body></html>";
+                "<!doctype html><html lang = \(self.lang ?? "en-CA")><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(pathPrefix)</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>\(pathPrefix)</h1><img src=\(self.image ?? "") alt = 'image-alt'>\(data)</body></html>";
                 
                 //if output path is mentioned
                 if (self.output != nil) {
@@ -124,7 +130,7 @@ extension Command {
                         
                         //Writing the data
                         //!!!!!!!!!!!!!!!!
-                        let storedText =  "<!doctype html><html lang =\(self.lang ?? "en-CA")><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(fileName)</title><meta name='viewport' content='width=device-width,initial-scale=1'></head><body><h1>\(fileName)</h1>\(data)</body></html>";
+                        let storedText =  "<!doctype html><html lang =\(self.lang ?? "en-CA")><head><LINK rel='stylesheet' href=\(self.stylesheet ?? " ")><meta charset='utf-8'><title>\(fileName)</title><meta name='viewport' content='width=device-width,initial-scale=1'></head><body><h1>\(fileName)</h1><img src=\(self.image ?? "") alt = 'image-alt'>\(data)</body></html>";
                         
                         //if output path is mentioned
                         if (self.output != nil) {

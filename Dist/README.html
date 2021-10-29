@@ -1,18 +1,18 @@
-# ModernSSG #
+<!doctype html><html lang = en-CA><head><LINK rel='stylesheet' href= ><meta charset='utf-8'><title>README</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>README</h1><img src=https://web.imt-atlantique.fr/x-info/atlanmod/images/d/d1/Github.jpg alt = 'image-alt'><h1>ModernSSG</h1>
  Modern SSG is a Static Site Generator which helps to convert text files to HTML made with Apple Swift version 5.4.2 with help of Argument Parser.
 
-## Pre-requisites ##
+<h2>Pre-requisites</h2>
 Swift is an ios based development language. This requires Swift installed on your mac. To run this on windows you require minimum swift packge 5.3 to run or XCode version 12. To work on this project xcode installation is must!
 [Install Swift](https://swift.org/getting-started/#installing-swift)
 
-## Terminal Usage ##
-```bash
+<h2>Terminal Usage</h2>
+<pre><code>
 $ swift run
 $ swift run ModernSSG [subcommands]
-```
+</code></pre>
 
-## Help ##
-```bash
+<h2>Help</h2>
+<pre><code>
 OVERVIEW: A program to convert text files to HTML site generator
 
 USAGE: ModernSSG --input <input> [--stylesheet <stylesheet>] [--output <output>]
@@ -27,35 +27,35 @@ OPTIONS:
                           processed.
   --version               Show the version.
   -h, --help              Show help information.
-```
+</code></pre>
 
-## Version ##
+<h2>Version</h2>
 This command allows the version to specify the current version of the tool.
 
-```bash
+<pre><code>
 swift run ModernSSG --version
 ModernSSG 0.0.1
-```
+</code></pre>
 
-## Input ##
+<h2>Input</h2>
 This commands allows the user to specify the input file present in desktop directory for the command line tool to read and look for same file. Please mention the file extension to avoid reading error.
 
-```bash
+<pre><code>
 swift run ModernSSG --input "your text file"
 swift run ModernSSG --config modernSsgConfing.json
-```
-## Example ##
+</code></pre>
+<h2>Example</h2>
 
 **Before** "your filename.txt"
 
-```bash
+<pre><code>
 My first SSG Generator file
 This is my first paragraph
 This is my second paragraph
-```
+</code></pre>
 
 **After** "your filename.html"
-```bash
+<pre><code>
 <!doctype html>
 <html>
 <head>
@@ -70,43 +70,44 @@ This is my second paragraph
 <p>This is my second paragraph</p>
 </body>
 </html>"
-```
+</code></pre>
 
-## Output ##
+<h2>Output</h2>
 This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
 
-```bash
+<pre><code>
 swift run ModernSSG --input "your text file" --output "your output folder name"
-```
+</code></pre>
 
-## i ##
+<h2>i</h2>
 This commands allows the user to specify the input folder/directory present in current directory for the command line tool to read and look for all files. 
 
-```bash
+<pre><code>
 swift run ModernSSG -i "your input folder directory" 
-```
-## Stylesheet ##
+</code></pre>
+<h2>Stylesheet</h2>
 This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
 
-```bash
+<pre><code>
 swift run ModernSSG --input "your text file" --stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-```
+</code></pre>
 
 
-## Contributing ##
+<h2>Contributing</h2>
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License ##
+<h2>License</h2>
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Sources ##
+<h2>Sources</h2>
 [Build a Command Line Tool Using Swift Argument Parser by Riccardo](https://betterprogramming.pub/build-a-command-line-tool-using-swift-argument-parser-f7d9443b785)
 
 [FileManager](https://developer.apple.com/documentation/foundation/filemanager/)
 
 [Argument Parser](https://github.com/apple/swift-argument-parser)
 
-## Author
+<h2>Author
 [JAPNEET SINGH](https://github.com/japneetsingh035)
+</body></html>
