@@ -66,6 +66,8 @@ extension Command {
                     data = data.replacingOccurrences(of: " ##", with: "</h2>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "# ", with: "<h1>", options: .regularExpression)
                     data = data.replacingOccurrences(of: " #", with: "</h1>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "```bash", with: "<pre><code>", options: .regularExpression)
+                    data = data.replacingOccurrences(of: "```", with: "</code></pre>", options: .regularExpression)
                     data = data.replacingOccurrences(of: " _", with: "<i>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "_ ", with: "</i>", options: .regularExpression)
                     
