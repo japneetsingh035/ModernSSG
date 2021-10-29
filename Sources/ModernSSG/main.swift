@@ -72,8 +72,6 @@ extension Command {
                     data = data.replacingOccurrences(of: "_ ", with: "</i>", options: .regularExpression)
                     
                     //Full Markdown support
-                    data = data.replacingOccurrences(of: "^*[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$", with: "<i>", options: .regularExpression)
-                    data = data.replacingOccurrences(of: "^[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$*", with: "</i>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "^**[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$", with: "<b>", options: .regularExpression)
                     data = data.replacingOccurrences(of: "^[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]$**", with: "</b>", options: .regularExpression)
                     //Add support for a horizontal rule in Markdown
