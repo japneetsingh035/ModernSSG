@@ -25,11 +25,10 @@ extension Command {
         //lang
         @Option(name: .shortAndLong, help:"allow the user to specify the language attribute on root html.") var lang: String?
         
-        //lang
+        //image
         @Option(name: .long, help:"allow the user to specify the image attribute on root html.") var image: String?
         
-        mutating func run() throws{
-            
+        mutating func run() throws {
             //Searching the argumented file in current directory
             if (self.input.hasSuffix(".txt")||self.input.hasSuffix(".md")){
                 filereadAndWrite()

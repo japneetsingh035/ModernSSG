@@ -1,16 +1,7 @@
 # ModernSSG #
  Modern SSG is a Static Site Generator which helps to convert text files to HTML made with Apple Swift version 5.4.2 with help of Argument Parser.
 
-## Pre-requisites ##
-Swift is an ios based development language. This requires Swift installed on your mac. To run this on windows you require minimum swift packge 5.3 to run or XCode version 12. To work on this project xcode installation is must!
-[Install Swift](https://swift.org/getting-started/#installing-swift)
-
-## Terminal Usage ##
-```bash
-$ swift run
-$ swift run ModernSSG [subcommands]
-```
-
+# Features #
 ## Help ##
 ```bash
 OVERVIEW: A program to convert text files to HTML site generator
@@ -45,6 +36,34 @@ This commands allows the user to specify the input file present in desktop direc
 swift run ModernSSG --input "your text file"
 swift run ModernSSG --config modernSsgConfing.json
 ```
+
+## Output ##
+This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
+
+```bash
+swift run ModernSSG --input "your text file" --output "your output folder name"
+```
+
+## i ##
+This commands allows the user to specify the input folder/directory present in current directory for the command line tool to read and look for all files. 
+
+```bash
+swift run ModernSSG -i "your input folder directory" 
+```
+## Stylesheet ##
+This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
+
+```bash
+swift run ModernSSG --input "your text file" --stylesheet "your link here" "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+```
+
+## Image ##
+This command allow the user to specify a image URL to be processed on file present in dist folder.
+
+```bash
+swift run ModernSSG --input "your text file" --image "your link here" "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+```
+
 ## Example ##
 
 **Before** "your filename.txt"
@@ -72,27 +91,6 @@ This is my second paragraph
 </body>
 </html>"
 ```
-
-## Output ##
-This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
-
-```bash
-swift run ModernSSG --input "your text file" --output "your output folder name"
-```
-
-## i ##
-This commands allows the user to specify the input folder/directory present in current directory for the command line tool to read and look for all files. 
-
-```bash
-swift run ModernSSG -i "your input folder directory" 
-```
-## Stylesheet ##
-This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
-
-```bash
-swift run ModernSSG --input "your text file" --stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-```
-
 
 ## Contributing ##
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
