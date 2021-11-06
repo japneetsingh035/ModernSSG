@@ -17,9 +17,17 @@ $ swift run ModernSSG [subcommands]
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+## Install swiftformat
+```bash
+$ brew install swiftformat
+$ swiftformat [fileName]
+```
+
 ## Install swiftlint
 ```bash
 $ brew install swiftlint
+$ swiftLint [fileName]
 ```
 
 ### AppCode
