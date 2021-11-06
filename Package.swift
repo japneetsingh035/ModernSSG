@@ -10,9 +10,8 @@ let package = Package(
              name: "swift-argument-parser",
              url: "https://github.com/apple/swift-argument-parser",
              .upToNextMinor(from: "0.4.3")
-        ),
+        )
         // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -20,9 +19,9 @@ let package = Package(
         .target(
             name: "ModernSSG",
             dependencies: [
-                .product(name: "ArgumentParser", package: "swift-argument-parser"),]),
+                .product(name: "ArgumentParser", package: "swift-argument-parser")]),
         .testTarget(
             name: "ModernSSGTests",
-            dependencies: ["ModernSSG"]),
+            dependencies: ["ModernSSG"])
     ]
 )
