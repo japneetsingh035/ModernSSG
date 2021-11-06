@@ -11,11 +11,16 @@ $ gh repo clone japneetsingh035/ModernSSG
 $ cd ModernSSG
 $ swift run
 $ swift run ModernSSG [subcommands]
+``` 
+## Brew Installation
+[Installing brew on mac](https://brew.sh/)
+```bash
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-## Using Homebrew
+## Install swiftlint
+```bash
 $ brew install swiftlint
-$ swift package init --name ModernSSG --type executable.
+```
 
 ### AppCode
 
