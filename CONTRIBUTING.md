@@ -12,6 +12,15 @@ $ cd ModernSSG
 $ swift run
 $ swift run ModernSSG [subcommands]
 ``` 
+
+## Testing ##
+```bash
+$ swift test
+```
+## To contribute to add more testing ##
+Please add functions in ModernSSGUnitTests
+
+
 ## Brew Installation
 [Installing brew on mac](https://brew.sh/)
 ```bash
