@@ -147,6 +147,7 @@ extension Command {
                     } catch { print("Error in reading folder. *** Folder must be in current directory ***") }
                 }
             }
+            print("Error: The value \(input) is invalid for '--input <input>'")
         }
     }
 }

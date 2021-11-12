@@ -1,4 +1,9 @@
+.DS_Store
+/.build
+/Packages
+/Sources/.DS_Store
+/Sources/ModernSSG/.DS_Store
+/*.xcodeproj
+.swiftpm
+.*.sw?
 xcuserdata/
-*.swiftpm
-*.DS_Store
-*.build

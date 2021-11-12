@@ -1,16 +1,7 @@
-<!doctype html><html lang = en-CA><head><LINK rel='stylesheet' href= ><meta charset='utf-8'><title>README</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>README</h1><img class='w3-round' src=https://web.imt-atlantique.fr/x-info/atlanmod/images/d/d1/Github.jpg alt = 'image-alt'><h1>ModernSSG</h1>
+<!doctype html><html lang = en-CA><head><LINK rel='stylesheet' href= ><meta charset='utf-8'><title>README</title><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h1>README</h1><img src= alt = 'image-alt'><h1>ModernSSG</h1>
  Modern SSG is a Static Site Generator which helps to convert text files to HTML made with Apple Swift version 5.4.2 with help of Argument Parser.
 
-<h2>Pre-requisites</h2>
-Swift is an ios based development language. This requires Swift installed on your mac. To run this on windows you require minimum swift packge 5.3 to run or XCode version 12. To work on this project xcode installation is must!
-[Install Swift](https://swift.org/getting-started/#installing-swift)
-
-<h2>Terminal Usage</h2>
-<pre><code>
-$ swift run
-$ swift run ModernSSG [subcommands]
-</code></pre>
-
+<h1>Features</h1>
 <h2>Help</h2>
 <pre><code>
 OVERVIEW: A program to convert text files to HTML site generator
@@ -45,6 +36,34 @@ This commands allows the user to specify the input file present in desktop direc
 swift run ModernSSG --input "your text file"
 swift run ModernSSG --config modernSsgConfing.json
 </code></pre>
+
+<h2>Output</h2>
+This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
+
+<pre><code>
+swift run ModernSSG --input "your text file" --output "your output folder name"
+</code></pre>
+
+<h2>i</h2>
+This commands allows the user to specify the input folder/directory present in current directory for the command line tool to read and look for all files. 
+
+<pre><code>
+swift run ModernSSG -i "your input folder directory" 
+</code></pre>
+<h2>Stylesheet</h2>
+This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
+
+<pre><code>
+swift run ModernSSG --input "your text file" --stylesheet "your link here" "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+</code></pre>
+
+<h2>Image</h2>
+This command allow the user to specify a image URL to be processed on file present in dist folder.
+
+<pre><code>
+swift run ModernSSG --input "your text file" --image "your link here" "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+</code></pre>
+
 <h2>Example</h2>
 
 **Before** "your filename.txt"
@@ -72,27 +91,6 @@ This is my second paragraph
 </body>
 </html>"
 </code></pre>
-
-<h2>Output</h2>
-This commands allows the user to specify the output folder present in current directory for the command line tool to read and move all output files to this folder.
-
-<pre><code>
-swift run ModernSSG --input "your text file" --output "your output folder name"
-</code></pre>
-
-<h2>i</h2>
-This commands allows the user to specify the input folder/directory present in current directory for the command line tool to read and look for all files. 
-
-<pre><code>
-swift run ModernSSG -i "your input folder directory" 
-</code></pre>
-<h2>Stylesheet</h2>
-This command allow the user to specify a stylesheet URL to be processed on all files present in dist folder.
-
-<pre><code>
-swift run ModernSSG --input "your text file" --stylesheet "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-</code></pre>
-
 
 <h2>Contributing</h2>
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
