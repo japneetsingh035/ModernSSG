@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "ModernSSG",
     dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.2"),
         // Dependencies declare other packages that this package depends on.
     ],
     targets: [
