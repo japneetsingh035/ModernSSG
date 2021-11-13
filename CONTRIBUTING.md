@@ -9,17 +9,14 @@ Swift is an ios based development language. This requires Swift installed on you
 ```bash
 $ gh repo clone japneetsingh035/ModernSSG
 $ cd ModernSSG
-$ swift run
+$ swift package generate-xcodeproj
+$ swift build
+$ swift test
 $ swift run ModernSSG [subcommands]
 ``` 
 
-## Testing ##
-```bash
-$ swift test
-```
 ## To contribute to add more testing ##
-Please add functions in ModernSSGUnitTests
-
+Please update testExample function in ModernSSGUnitTests or feel free to add more functions.
 
 ## Brew Installation
 [Installing brew on mac](https://brew.sh/)
