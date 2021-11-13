@@ -97,6 +97,10 @@ extension Command {
         }
 
         func readAndWriteFolder() {
+            if(input.isEmpty){
+                print("Error. Please enter input folder or add suffix to file name")
+                return
+            }
             let url = URL(fileURLWithPath: FileManager.default.currentDirectoryPath + "/\(input)/")
             var files = [URL]()
             // Searching all text files in desktop directory
