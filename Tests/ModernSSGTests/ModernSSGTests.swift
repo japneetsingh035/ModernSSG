@@ -31,19 +31,6 @@ final class ModernSSGTests: XCTestCase {
         let output = String(data: data, encoding: .utf8)
 
         XCTAssertEqual(output, "")
-//            do {
-//                let storedText = "<!doctype html><html lang =\(lang ?? "en-CA")><head><LINK rel='stylesheet' href=\(stylesheet ?? " ")><meta charset='utf-8'><title>\(input)</title><meta name='viewport' content='width=device-width,initial-scale=1'></head><body><h1>\(input)</h1><img src=\(image ?? "") alt = 'image-alt'>\(input)</body></html>"
-//                let filePath = FileManager.default.currentDirectoryPath + "/Dist/\(input).html"
-//                if FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil) {
-//                    try storedText.write(toFile: filePath, atomically: false, encoding: .utf8)
-//                    print("File Created at \(filePath)")
-//                } else {
-//                    print("Error in writing data! Please create folder in current directory")
-//                }
-//            }
-//                catch { print("Error in reading folder. *** Folder must be in current directory ***") }
-//            }
-//}
         #endif
     }
 
